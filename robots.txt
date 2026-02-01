@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://ChefitoGG.github.io/TU_REPO/sitemap.xml
+Sitemap: https://ChefitoGG.github.io/Saltatio-Favillae/sitemap.xml
+
