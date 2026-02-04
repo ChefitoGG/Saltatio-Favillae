@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saltatio Favillae | Aerospace Propulsion Research</title>
+    <title>Saltatio Favillae | Advanced Propulsion Systems</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -18,7 +18,7 @@
             --accent-color: #ffffff;
             --tech-gray: #888888;
             --border-color: #222222;
-            --highlight-orange: #ff3c00; /* Color sutil para destacar datos */
+            --highlight-orange: #ff3c00;
         }
 
         body {
@@ -84,7 +84,7 @@
             font-weight: 700;
         }
 
-        /* --- ABOUT & METRICS (NEW) --- */
+        /* --- ABOUT & METRICS --- */
         .about-text {
             font-size: 1.15rem;
             line-height: 1.8;
@@ -96,7 +96,10 @@
             border-left: 2px solid var(--highlight-orange);
             padding-left: 20px;
             margin: 30px 0;
-            font-style: italic;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
         }
         
         .metrics-grid {
@@ -106,9 +109,7 @@
             border-top: 1px solid var(--border-color);
             padding-top: 40px;
         }
-        .metric-item {
-            text-align: left;
-        }
+        .metric-item { text-align: left; }
         .metric-value {
             font-size: 3.5rem;
             font-weight: 700;
@@ -154,7 +155,6 @@
             transform: scale(1.02);
         }
 
-        /* --- TECHNICAL STATS --- */
         .tech-spec {
             display: flex;
             justify-content: space-between;
@@ -174,6 +174,23 @@
         .footer-logo { height: 30px; opacity: 0.4; filter: invert(1); margin-bottom: 30px; }
         .footer-text { color: #444; font-size: 0.75rem; letter-spacing: 3px; }
 
+        .btn-download {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 30px;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            text-decoration: none;
+            font-family: 'Rajdhani';
+            font-weight: 700;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+        .btn-download:hover {
+            background: var(--accent-color);
+            color: var(--primary-black);
+        }
+
         @media (max-width: 991px) {
             .engine-text { border-left: none; padding-left: 0; margin-bottom: 50px; }
             .metrics-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
@@ -192,9 +209,9 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#about">ABOUT</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#ignis">IGNIS PROGRAM</a></li>
-                    <li class="nav-item"><a class="nav-link" href="mailto:contact@saltatiofavillae.com">CONTACT</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">CAPABILITIES</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ignis">PROPULSION SYSTEMS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="mailto:contact@saltatiofavillae.com">BUSINESS INQUIRIES</a></li>
                 </ul>
             </div>
         </div>
@@ -202,8 +219,8 @@
 
     <section class="hero">
         <div class="container hero-content" data-aos="fade-up" data-aos-duration="1200">
-            <p>Propulsion Research Initiative</p>
-            <h1>SALTATIO<br>FAVILLAE</h1>
+            <p>Reliable Access to Orbit</p>
+            <h1>SOLUTIONS FOR<br>THE LEO ECONOMY</h1>
         </div>
     </section>
 
@@ -211,17 +228,17 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8" data-aos="fade-up">
-                    <span class="label-tech">IDENTITY // MISSION</span>
-                    <h2 class="mb-4">THE DANCE OF ASHES</h2>
+                    <span class="label-tech">CORPORATE // OVERVIEW</span>
+                    <h2 class="mb-4">ENGINEERING SIMPLICITY</h2>
                     
                     <div class="about-text">
-                        <p>Founded in February 2026, Saltatio Favillae was born from a singular necessity: to strip away the complexity that bars humanity from the stars. We are not just an engineering firm; we are a research initiative dedicated to the art of propulsion.</p>
+                        <p>Saltatio Favillae is an aerospace engineering firm dedicated to the development of high-reliability propulsion systems. Our competitive advantage lies in the systematic reduction of technical complexity, optimizing manufacturing costs while ensuring hardware reusability in critical operational environments.</p>
                         
                         <div class="about-highlight">
-                            "We build because we believe the path to orbit should be robust, reusable, and relentlessly simple. The fire we control is not just fuel—it is the bridge to the next era of logistics."
+                            Our mission is to scale space infrastructure through robust and economically sustainable propulsion architectures.
                         </div>
 
-                        <p>Our mandate is to design and manufacture liquid rocket engines that prioritize architectural clarity over excess. By mastering the fundamental "dance" of combustion and fluid dynamics, we aim to provide reliable access to space, turning the volatile chaos of a launch into a precise, repeatable symphony.</p>
+                        <p>We specialize in transitioning theoretical concepts into flight-ready hardware. By leveraging advanced manufacturing methodologies, we deliver engines that exceed current durability standards, enabling clients to maximize launch cadence and minimize mission risk.</p>
                     </div>
                 </div>
             </div>
@@ -229,19 +246,19 @@
             <div class="metrics-grid" data-aos="fade-up" data-aos-delay="200">
                 <div class="metric-item">
                     <span class="metric-value">0</span>
-                    <span class="metric-label">LAUNCHES</span>
+                    <span class="metric-label">OPERATIONAL MISSIONS</span>
                 </div>
                 <div class="metric-item">
                     <span class="metric-value">0</span>
-                    <span class="metric-label">SATELLITES DEPLOYED</span>
+                    <span class="metric-label">ASSETS IN ORBIT</span>
                 </div>
                 <div class="metric-item">
                     <span class="metric-value">1</span>
-                    <span class="metric-label">ENGINE MODELS</span>
+                    <span class="metric-label">ACTIVE PROGRAM</span>
                 </div>
                 <div class="metric-item">
                     <span class="metric-value" style="color: var(--highlight-orange)">0s</span>
-                    <span class="metric-label">HOT FIRE TEST DURATION</span>
+                    <span class="metric-label">HOT FIRE DURATION</span>
                 </div>
             </div>
         </div>
@@ -252,26 +269,30 @@
             <div class="row align-items-center">
                 
                 <div class="col-lg-5 engine-text" data-aos="fade-right">
-                    <span class="label-tech">OBJECTIVE // 01</span>
+                    <span class="label-tech">PRODUCT LINE // 01</span>
                     <h2>IGNIS 1</h2>
                     <div class="engine-description">
-                        <p><strong>IGNIS 1</strong> is the flagship prototype of Saltatio Favillae: a reusable liquid rocket engine designed for high-cadence operations.</p>
-                        <p>Currently in the conceptual modeling and component fabrication phase, IGNIS 1 represents our commitment to "hardware-rich" development.</p>
+                        <p><strong>IGNIS 1</strong> is our flagship engine designed for extended lifecycle operations. Engineered specifically for <strong>Liquid Oxygen and Kerosene</strong> propellants, this system prioritizes structural integrity and maintenance efficiency.</p>
+                        <p>Currently in the fabrication phase, the IGNIS 1 serves as the cornerstone of our commercial portfolio, providing a versatile propulsion solution for medium-lift launch vehicles and technology demonstrators.</p>
                     </div>
                     
                     <div class="mt-5">
-                        <div class="tech-spec"><span>ARCHITECTURE</span><span>SYSTEM-CENTRIC</span></div>
-                        <div class="tech-spec"><span>PHASE</span><span>CONCEPTUAL / PASSIVE</span></div>
-                        <div class="tech-spec"><span>STATUS</span><span style="color:#fff">FABRICATION ARTICLE 1.0</span></div>
+                        <div class="tech-spec"><span>TOTAL HEIGHT</span><span>1300 MM</span></div>
+                        <div class="tech-spec"><span>NOMINAL THRUST</span><span>7.26 kN</span></div>
+                        <div class="tech-spec"><span>EXIT DIAMETER</span><span style="color:#fff">900 MM</span></div>
                     </div>
+
+                    <a href="IGNIS_1_Technical_Datasheet_1300mm.pdf" download class="btn-download">
+                        DOWNLOAD TECHNICAL SPECIFICATIONS
+                    </a>
                 </div>
 
                 <div class="col-lg-6 offset-lg-1" data-aos="fade-left">
                     <div class="engine-image-container">
-                        <img src="ignis_part.png" alt="IGNIS 1 Prototype Part">
+                        <img src="ignis_part.png" alt="IGNIS 1 Propulsion System">
                     </div>
                     <p style="margin-top: 15px; font-size: 0.7rem; color: #444; font-family: 'Rajdhani'; text-align: right; letter-spacing: 2px;">
-                        IMAGE: PASSIVE DEMONSTRATOR ASSEMBLY // 3D ANALYSIS
+                        SYSTEM SCHEMATIC // PROPULSION UNIT 1.0 // SALTATIO FAVILLAE
                     </p>
                 </div>
 
@@ -284,7 +305,7 @@
             <img src="logo.png" alt="Saltatio Favillae" class="footer-logo">
             <div class="footer-text">
                 SALTATIO FAVILLAE &copy; 2026<br>
-                ADVANCED SYSTEMS ARCHITECTURE & SPACE PROPULSION
+                ADVANCED PROPULSION SYSTEMS & AEROSPACE MANUFACTURING
             </div>
         </div>
     </footer>
