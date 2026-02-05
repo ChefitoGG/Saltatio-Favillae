@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saltatio Favillae | Advanced Propulsion Systems</title>
+    <title>Aether Space | Advanced Propulsion Systems</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -40,7 +40,13 @@
             border-bottom: 1px solid rgba(255,255,255,0.05);
             padding: 25px 0;
         }
-        .navbar-brand img { height: 35px; filter: invert(1); }
+        
+        /* LOGO SIN FILTROS */
+        .navbar-brand img { 
+            height: 35px; 
+            filter: none; /* Eliminado el invert */
+        }
+
         .nav-link {
             color: var(--accent-color) !important;
             letter-spacing: 2px;
@@ -171,7 +177,15 @@
             padding: 80px 0;
             text-align: center;
         }
-        .footer-logo { height: 30px; opacity: 0.4; filter: invert(1); margin-bottom: 30px; }
+        
+        /* FOOTER LOGO SIN FILTROS */
+        .footer-logo { 
+            height: 30px; 
+            margin-bottom: 30px; 
+            filter: none; 
+            opacity: 1; 
+        }
+
         .footer-text { color: #444; font-size: 0.75rem; letter-spacing: 3px; }
 
         .btn-download {
@@ -202,7 +216,7 @@
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="logo.png" alt="Saltatio Favillae">
+                <img src="logo.png" alt="Aether Space">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon" style="filter: invert(1)"></span>
@@ -211,7 +225,7 @@
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="#about">CAPABILITIES</a></li>
                     <li class="nav-item"><a class="nav-link" href="#ignis">PROPULSION SYSTEMS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="mailto:contact@saltatiofavillae.com">BUSINESS INQUIRIES</a></li>
+                    <li class="nav-item"><a class="nav-link" href="mailto:contact@aetherspace.com">BUSINESS INQUIRIES</a></li>
                 </ul>
             </div>
         </div>
@@ -232,7 +246,7 @@
                     <h2 class="mb-4">ENGINEERING SIMPLICITY</h2>
                     
                     <div class="about-text">
-                        <p>Saltatio Favillae is an aerospace engineering firm dedicated to the development of high-reliability propulsion systems. Our competitive advantage lies in the systematic reduction of technical complexity, optimizing manufacturing costs while ensuring hardware reusability in critical operational environments.</p>
+                        <p>Aether Space is an aerospace engineering firm dedicated to the development of high-reliability propulsion systems. Our competitive advantage lies in the systematic reduction of technical complexity, optimizing manufacturing costs while ensuring hardware reusability in critical operational environments.</p>
                         
                         <div class="about-highlight">
                             Our mission is to scale space infrastructure through robust and economically sustainable propulsion architectures.
@@ -292,7 +306,7 @@
                         <img src="ignis_part.png" alt="IGNIS 1 Propulsion System">
                     </div>
                     <p style="margin-top: 15px; font-size: 0.7rem; color: #444; font-family: 'Rajdhani'; text-align: right; letter-spacing: 2px;">
-                        SYSTEM SCHEMATIC // PROPULSION UNIT 1.0 // SALTATIO FAVILLAE
+                        SYSTEM SCHEMATIC // PROPULSION UNIT 1.0 // AETHER SPACE
                     </p>
                 </div>
 
@@ -302,9 +316,9 @@
 
     <footer>
         <div class="container">
-            <img src="logo.png" alt="Saltatio Favillae" class="footer-logo">
+            <img src="logo.png" alt="Aether Space" class="footer-logo">
             <div class="footer-text">
-                SALTATIO FAVILLAE &copy; 2026<br>
+                AETHER SPACE &copy; 2026<br>
                 ADVANCED PROPULSION SYSTEMS & AEROSPACE MANUFACTURING
             </div>
         </div>
