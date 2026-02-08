@@ -3,182 +3,223 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aether Space | Zero-Fuel Orbital Logistics</title>
+    <title>AETHER SPACE | Advanced Propulsion</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=D-DIN:wght@400;700&family=Rajdhani:wght@300;500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 
     <style>
+        /* --- SPACEX AESTHETIC CORE --- */
         :root {
-            --primary-black: #050505;
-            --accent-silver: #e0e0e0;
-            --sail-glow: #00f2ff;
-            --tech-gray: #777777;
-            --border-color: #1a1a1a;
+            --pure-black: #000000;
+            --off-black: #050505;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border-light: rgba(255, 255, 255, 0.15);
+            --text-white: #ffffff;
+            --text-gray: #8d8d8d;
         }
 
         body {
-            background-color: var(--primary-black);
-            color: var(--accent-silver);
-            font-family: 'Inter', sans-serif;
+            background-color: var(--pure-black);
+            color: var(--text-white);
+            font-family: 'Rajdhani', sans-serif; /* Similar a la usada en interfaces espaciales */
             overflow-x: hidden;
+            margin: 0;
         }
 
-        h1, h2, h3, .nav-link, .metric-value, .label-tech {
-            font-family: 'Rajdhani', sans-serif;
+        /* TIPOGRAFÍA TIPO "FLIGHT DATA" */
+        h1, h2, h3, .nav-link {
             text-transform: uppercase;
+            letter-spacing: 3px;
         }
 
-        /* --- NAVIGATION --- */
+        h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .mono {
+            font-family: 'Share Tech Mono', monospace;
+            color: var(--text-gray);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        /* --- NAVBAR INVISIBLE --- */
         .navbar {
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            padding: 20px 0;
-            z-index: 1000;
+            background: transparent; /* Totalmente transparente */
+            padding: 30px 0;
+            transition: 0.5s;
         }
         
+        .navbar-brand {
+            font-weight: 700;
+            letter-spacing: 5px;
+            font-size: 1.5rem;
+            color: #fff !important;
+        }
+
         .nav-link {
-            color: var(--accent-silver) !important;
-            letter-spacing: 2px;
+            color: #fff !important;
             font-size: 0.8rem;
             margin-left: 30px;
+            position: relative;
+            opacity: 0.8;
             transition: 0.3s;
         }
 
-        .nav-link:hover { color: var(--sail-glow) !important; }
+        .nav-link:hover {
+            opacity: 1;
+        }
 
-        /* --- HERO SECTION --- */
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: #fff;
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* --- HERO IMMERSIVE --- */
         .hero {
             height: 100vh;
-            background: radial-gradient(circle at center, rgba(0, 242, 255, 0.08) 0%, rgba(0,0,0,1) 80%), 
-                        url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=2072&auto=format&fit=crop');
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)),
+                        url('https://images.unsplash.com/photo-1516849841032-87cbac4d88f7?q=80&w=2070&auto=format&fit=crop'); 
             background-size: cover;
             background-position: center;
+            background-attachment: fixed; /* Efecto Parallax sutil */
             display: flex;
             align-items: center;
-        }
-
-        .hero-content h1 {
-            font-size: clamp(3rem, 8vw, 6.5rem);
-            font-weight: 700;
-            letter-spacing: -3px;
-            line-height: 0.85;
-            background: linear-gradient(to bottom, #ffffff, #888888);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 20px;
-        }
-
-        .hero-content p {
-            font-size: 1.1rem;
-            color: var(--sail-glow);
-            letter-spacing: 6px;
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-
-        /* --- CONTENT SECTIONS --- */
-        .section-padding { padding: 140px 0; }
-        
-        .label-tech {
-            color: var(--sail-glow);
-            letter-spacing: 5px;
-            display: block;
-            margin-bottom: 20px;
-            font-size: 0.9rem;
-        }
-
-        /* --- METRICS --- */
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 40px;
-            border-top: 1px solid var(--border-color);
-            padding-top: 50px;
-            margin-top: 70px;
-        }
-
-        .metric-value { font-size: 3.5rem; color: #fff; line-height: 1; font-weight: 700; }
-        .metric-label { font-size: 0.7rem; color: var(--tech-gray); letter-spacing: 2px; margin-top: 10px; display: block; }
-
-        /* --- TECH SPECS BOX --- */
-        .tech-spec {
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 1px solid #111;
-            padding: 18px 0;
-            font-family: 'Rajdhani';
-            font-size: 1rem;
-        }
-        .tech-spec span:last-child { color: var(--sail-glow); font-weight: 600; }
-
-        /* --- CONTACT SECTION --- */
-        .contact-section {
-            background: linear-gradient(to bottom, #030303, #000);
-            border-top: 1px solid var(--border-color);
+            justify-content: center;
             text-align: center;
         }
 
-        .contact-box {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 60px;
-            border: 1px solid rgba(0, 242, 255, 0.1);
-            background: rgba(255,255,255,0.02);
-        }
-
-        .email-link {
-            font-family: 'Rajdhani';
-            font-size: clamp(1.2rem, 3vw, 2.2rem);
-            color: #fff;
-            text-decoration: none;
-            letter-spacing: 2px;
-            transition: 0.3s;
-            display: block;
-            margin: 20px 0;
-        }
-
-        .email-link:hover {
-            color: var(--sail-glow);
-            text-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
-        }
-
-        .btn-action {
-            display: inline-block;
-            padding: 18px 45px;
-            border: 1px solid var(--sail-glow);
-            color: var(--sail-glow);
-            text-decoration: none;
-            font-family: 'Rajdhani';
+        .hero h1 {
+            font-size: clamp(3rem, 10vw, 8rem);
             font-weight: 700;
-            letter-spacing: 3px;
-            transition: 0.4s;
+            letter-spacing: -2px;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin: 0;
+        }
+
+        .hero p {
+            font-family: 'Share Tech Mono', monospace;
+            letter-spacing: 5px;
+            font-size: 1rem;
+            color: rgba(255,255,255,0.8);
             margin-top: 20px;
-            cursor: pointer;
+        }
+
+        /* --- SECCIONES FULL WIDTH --- */
+        .tech-section {
+            padding: 120px 0;
+            position: relative;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .tech-bg-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20vw;
+            font-weight: 900;
+            color: rgba(255,255,255,0.02);
+            z-index: 0;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        /* --- DATASHEET TABLE (SpaceX Style) --- */
+        .specs-container {
+            margin-top: 40px;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .spec-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-light);
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        .spec-row:hover {
+            padding-left: 10px;
+            background: linear-gradient(90deg, rgba(255,255,255,0.05), transparent);
+        }
+
+        .spec-label {
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .spec-value {
+            font-family: 'Share Tech Mono', monospace;
+            color: var(--text-gray);
+        }
+
+        /* --- BUTTONS --- */
+        .btn-spacex {
+            margin-top: 40px;
+            padding: 15px 50px;
             background: transparent;
+            border: 2px solid #fff;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
-        .btn-action:hover {
-            background: var(--sail-glow);
+        .btn-spacex:hover {
+            background: #fff;
             color: #000;
-            box-shadow: 0 0 30px rgba(0, 242, 255, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255,255,255,0.1);
         }
 
-        footer {
-            padding: 40px 0;
-            font-size: 0.7rem;
-            letter-spacing: 4px;
-            color: #333;
+        /* --- IMAGES --- */
+        .tech-image-container {
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            min-height: 500px;
         }
 
-        .image-container {
-            border: 1px solid var(--border-color);
-            padding: 15px;
-            background: #000;
+        .tech-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%) contrast(1.2) brightness(0.8);
+            transition: 1s ease;
+        }
+        
+        .tech-section:hover .tech-image {
+            filter: grayscale(0%) contrast(1.1);
+            transform: scale(1.03);
+        }
+
+        /* --- FOOTER --- */
+        .footer {
+            background-color: var(--off-black);
+            padding: 80px 0;
+            text-align: center;
         }
     </style>
 </head>
@@ -186,11 +227,12 @@
 
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#" style="font-family: 'Rajdhani'; font-weight: 700; color: #fff; letter-spacing: 3px; font-size: 1.5rem;">AETHER SPACE</a>
+            <a class="navbar-brand" href="#">AETHER SPACE</a>
             <div class="collapse navbar-collapse justify-content-end">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#mission">MISSION</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#technology">TECHNOLOGY</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#launch">VEHICLES</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#propulsion">ENGINES</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#solar">SOLAR</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">CONTACT</a></li>
                 </ul>
             </div>
@@ -198,97 +240,173 @@
     </nav>
 
     <section class="hero">
-        <div class="container hero-content" data-aos="fade-up">
-            <p>Zero-Fuel Orbital Logistics</p>
-            <h1>POWERED BY<br>PURE RADIATION</h1>
+        <div class="container" data-aos="fade-in" data-aos-duration="2000">
+            <h1>AETHER SPACE</h1>
+            <p>MULTI-DOMAIN PROPULSION & RESEARCH</p>
+            <a href="#launch" style="color:white; text-decoration:none; display:block; margin-top:50px; font-size:1.5rem;">↓</a>
         </div>
     </section>
 
-    <section id="mission" class="section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8" data-aos="fade-right">
-                    <span class="label-tech">PROJECT // AURORA-1</span>
-                    <h2 class="display-4 fw-bold mb-4">INFINITE RANGE</h2>
-                    <p class="lead text-secondary" style="font-size: 1.4rem;">Aether Space is eliminating the 'Propellant Tax' for satellite operators.</p>
-                    <p class="text-secondary mt-4">Our AURORA-1 system converts solar radiation into constant, reliable thrust. With a 16m² deployment area and a ultralight 0.56kg payload, we enable infinite-range maneuvering for the next generation of orbital infrastructure.</p>
-                </div>
-            </div>
-
-            <div class="metrics-grid" data-aos="fade-up" data-aos-delay="200">
-                <div class="metric-item">
-                    <span class="metric-value">4x4m</span>
-                    <span class="metric-label">DIMENSIONS</span>
-                </div>
-                <div class="metric-item">
-                    <span class="metric-value">16m²</span>
-                    <span class="metric-label">CAPTURE AREA</span>
-                </div>
-                <div class="metric-item">
-                    <span class="metric-value">0.56kg</span>
-                    <span class="metric-label">NET MASS</span>
-                </div>
-                <div class="metric-item">
-                    <span class="metric-value">25μm</span>
-                    <span class="metric-label">THICKNESS</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="technology" class="section-padding" style="background-color: #030303;">
+    <section id="launch" class="tech-section">
+        <div class="tech-bg-text">STRATOS</div>
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5" data-aos="fade-right">
-                    <span class="label-tech">HARDWARE // SPECS V1.0</span>
-                    <h2 class="mb-4">AURORA-1 SYSTEM</h2>
-                    <p class="text-secondary mb-5">Built with high-durability Aluminized Mylar, our architecture is optimized for reliable mechanical deployment and maximum photon momentum transfer.</p>
+                    <span class="mono">01 // SUBORBITAL ARCHITECTURE</span>
+                    <h2 class="mt-2">AETHER V1</h2>
+                    <p class="text-secondary lead">A high-velocity sounding rocket platform designed for rapid aerodynamic validation and payload delivery to the upper atmosphere.</p>
                     
-                    <div class="tech-specs-box">
-                        <div class="tech-spec"><span>MATERIAL</span><span>ALUMINIZED MYLAR</span></div>
-                        <div class="tech-spec"><span>REFLECTIVITY</span><span>92%</span></div>
-                        <div class="tech-spec"><span>BOOM STRUCTURE</span><span>ULTRA-LIGHT CARBON FIBER</span></div>
-                        <div class="tech-spec"><span>SAIL WEIGHT</span><span>0.56 KG</span></div>
+                    <div class="specs-container">
+                        <div class="spec-row">
+                            <span class="spec-label">Height</span>
+                            <span class="spec-value">5.0 M / 16.4 FT</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Diameter</span>
+                            <span class="spec-value">500 MM</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Stages</span>
+                            <span class="spec-value">SINGLE STAGE</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Material</span>
+                            <span class="spec-value">CARBON COMPOSITE</span>
+                        </div>
                     </div>
-
-                    <a href="Aether_Space_AURORA1_Datasheet.pdf" download class="btn-action">DOWNLOAD DATASHEET</a>
                 </div>
-                <div class="col-lg-6 offset-lg-1" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="image-container">
-                        <img src="https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?q=80&w=1974&auto=format&fit=crop" class="img-fluid" style="filter: grayscale(1) brightness(0.7) contrast(1.2) sepia(1) hue-rotate(145deg);" alt="Aether Space Solar Sail">
+                <div class="col-lg-6 offset-lg-1" data-aos="fade-left">
+                    <div class="tech-image-container">
+                        <img src="https://images.unsplash.com/photo-1517976487492-5750f3195933?q=80&w=2070&auto=format&fit=crop" class="tech-image" alt="Rocket">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="section-padding contact-section">
-        <div class="container" data-aos="fade-up">
-            <div class="contact-box">
-                <span class="label-tech">GET IN TOUCH</span>
-                <h2 class="mb-4">READY FOR DEPLOYMENT?</h2>
-                <p class="text-secondary mb-5">We are looking for partners and mission integrators to lead the next era of photonic propulsion. Download our full technical specs or reach out for collaboration.</p>
-                
-                <a href="mailto:aetherspacecontact@gmail.com" class="email-link">aetherspacecontact@gmail.com</a>
-                
-                <div class="d-flex flex-wrap justify-content-center gap-3">
-                    <a href="mailto:aetherspacecontact@gmail.com" class="btn-action">EMAIL US</a>
-                    <a href="Aether_Space_AURORA1_Datasheet.pdf" download class="btn-action">GET DATASHEET</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
+    <section id="propulsion" class="tech-section">
+        <div class="tech-bg-text" style="right:0; left:auto; transform: translate(30%, -50%);">IGNIS</div>
         <div class="container">
-            AETHER SPACE &copy; 2026 // SOLAR PROPULSION DIVISION
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2" data-aos="fade-left">
+                    <span class="mono">02 // LIQUID PROPULSION</span>
+                    <h2 class="mt-2">IGNIS 30</h2>
+                    <p class="text-secondary lead">Our proprietary LOX/Kerosene engine. Engineered for reliability and high thrust-to-weight performance.</p>
+                    
+                    <div class="specs-container">
+                        <div class="spec-row">
+                            <span class="spec-label">Propellant</span>
+                            <span class="spec-value">LOX / RP-1</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Thrust (Sea Level)</span>
+                            <span class="spec-value">30 kN / 6,750 LBF</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Nozzle Diameter</span>
+                            <span class="spec-value">693 MM</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Cycle</span>
+                            <span class="spec-value">PRESSURE-FED</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1" data-aos="fade-right">
+                    <div class="tech-image-container">
+                        <img src="https://images.unsplash.com/photo-1541185933-710f50b77e7d?q=80&w=2070&auto=format&fit=crop" class="tech-image" alt="Engine Test">
+                    </div>
+                </div>
+            </div>
         </div>
-    </footer>
+    </section>
+
+    <section id="solar" class="tech-section" style="background: radial-gradient(circle at center, #0a0a0a, #000);">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto" data-aos="fade-up">
+                    <span class="mono">03 // PROPELLANTLESS FLIGHT</span>
+                    <h2>AURORA-1 SAIL</h2>
+                    <p class="text-secondary">Harnessing photon momentum for infinite delta-V.</p>
+                </div>
+            </div>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-12" data-aos="zoom-in">
+                    <div style="height: 400px; overflow: hidden; margin-bottom: 50px; position: relative;">
+                         <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop" style="width:100%; object-fit:cover; opacity: 0.7;" alt="Solar Sail in Orbit">
+                         <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(to bottom, transparent, #000);"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="specs-container mt-0">
+                        <div class="spec-row">
+                            <span class="spec-label">Dimensions</span>
+                            <span class="spec-value">4M x 4M</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Total Area</span>
+                            <span class="spec-value">16 M²</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="specs-container mt-0">
+                        <div class="spec-row">
+                            <span class="spec-label">Thickness</span>
+                            <span class="spec-value">25 MICRONS</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Material</span>
+                            <span class="spec-value">MYLAR</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="specs-container mt-0">
+                        <div class="spec-row">
+                            <span class="spec-label">System Mass</span>
+                            <span class="spec-value">0.56 KG</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Reflectivity</span>
+                            <span class="spec-value">92%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <a href="Aether_Space_AURORA1_Datasheet.pdf" download class="btn-spacex">DOWNLOAD DATASHEET</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="footer">
+        <div class="container" data-aos="fade-up">
+            <h2 class="mb-4">JOIN THE MISSION</h2>
+            <p class="mono text-secondary mb-5">WE ARE LOOKING FOR PARTNERS IN LAUNCH & PROPULSION</p>
+            <a href="mailto:aetherspacecontact@gmail.com" style="color: #fff; font-size: 1.5rem; text-decoration: none; border-bottom: 1px solid #333; padding-bottom: 5px;">aetherspacecontact@gmail.com</a>
+            
+            <div class="mt-5 text-secondary mono" style="font-size: 0.7rem;">
+                AETHER SPACE © 2026<br>
+                CONCEIVED & ENGINEERED ON EARTH
+            </div>
+        </div>
+    </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000, once: true, offset: 100 });
+        AOS.init({
+            once: true,
+            offset: 100,
+            duration: 1000,
+            easing: 'ease-out-cubic'
+        });
     </script>
 </body>
 </html>
