@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AETHER SPACE | Multi-Domain Aerospace</title>
+    <title>AETHER SPACE | Advanced Orbital Systems</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -15,20 +15,20 @@
             --white: #ffffff;
             --black: #000000;
             --accent: #00f2ff;
-            --gray-100: #0a0a0a;
-            --gray-200: #1a1a1a;
-            --text-muted: #888888;
+            --gray-900: #050505;
+            --gray-800: #111111;
+            --text-dim: #999;
         }
 
         body {
             background-color: var(--black);
             color: var(--white);
             font-family: 'Inter', sans-serif;
+            margin: 0;
             overflow-x: hidden;
-            scroll-behavior: smooth;
         }
 
-        h1, h2, h3, .nav-link, .stat-value, .spec-label, .btn-spacex {
+        h1, h2, h3, .nav-link, .btn-spacex, .spec-label, .stat-value {
             font-family: 'Rajdhani', sans-serif;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -36,22 +36,23 @@
 
         /* --- NAVIGATION --- */
         .navbar {
-            padding: 20px 50px;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
+            padding: 25px 50px;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(15px);
             border-bottom: 1px solid rgba(255,255,255,0.05);
+            z-index: 1000;
         }
         .nav-link {
             color: var(--white) !important;
             font-size: 0.8rem;
             font-weight: 700;
             margin: 0 15px;
-            transition: 0.3s;
+            transition: color 0.3s;
         }
         .nav-link:hover { color: var(--accent) !important; }
 
-        /* --- HERO SECTIONS --- */
-        .fullscreen-bg {
+        /* --- SECTION LAYOUT --- */
+        .section-hero {
             height: 100vh;
             width: 100%;
             background-size: cover;
@@ -64,96 +65,91 @@
         .overlay {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(70deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 60%);
+            background: linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%);
         }
 
-        .section-content {
+        .content-wrap {
             position: relative;
-            z-index: 5;
-            padding-left: 10%;
+            z-index: 10;
+            padding-left: 8%;
+            max-width: 700px;
         }
 
-        .pre-title {
+        .label-tech {
             color: var(--accent);
             font-weight: 600;
-            letter-spacing: 5px;
+            letter-spacing: 6px;
             margin-bottom: 10px;
             display: block;
         }
 
-        .main-title {
-            font-size: clamp(3rem, 7vw, 5.5rem);
+        .display-title {
+            font-size: clamp(3rem, 8vw, 5.5rem);
             font-weight: 700;
-            line-height: 0.9;
+            line-height: 0.85;
             margin-bottom: 30px;
         }
 
-        /* --- DATA TABLES --- */
-        .spec-table {
-            max-width: 450px;
-            margin-top: 30px;
+        /* --- TECHNICAL DATA --- */
+        .spec-container {
+            margin-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
-        .spec-row {
+        .spec-item {
             display: flex;
             justify-content: space-between;
-            padding: 12px 0;
-            border-bottom: 1px solid var(--gray-200);
-            font-family: 'Rajdhani';
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
-        .spec-label { color: var(--text-muted); font-size: 0.9rem; }
-        .spec-value { font-weight: 600; font-size: 1rem; }
+        .spec-label { color: var(--text-dim); font-size: 0.9rem; }
+        .spec-value { font-weight: 600; font-size: 1.1rem; font-family: 'Rajdhani'; }
 
         /* --- BUTTONS --- */
         .btn-spacex {
             display: inline-block;
             border: 2px solid var(--white);
             color: var(--white);
-            padding: 15px 50px;
+            padding: 18px 55px;
             text-decoration: none;
             font-weight: 700;
             font-size: 0.85rem;
             margin-top: 40px;
-            transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+            transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
         }
         .btn-spacex:hover {
             background-color: var(--white);
             color: var(--black);
+            box-shadow: 0 0 20px rgba(255,255,255,0.2);
         }
 
-        /* --- SECTION BACKGROUNDS --- */
-        #rocket { 
-            background-image: url('https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?q=80&w=2070&auto=format&fit=crop'); 
-        }
-        #engine { 
-            background-image: url('https://images.unsplash.com/photo-1517976487492-5750f3195933?q=80&w=2070&auto=format&fit=crop'); 
-        }
-        #sails { 
-            background-image: url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=2072&auto=format&fit=crop'); 
-        }
+        /* --- SPECIFIC BACKGROUNDS --- */
+        #launch { background-image: url('https://images.unsplash.com/photo-1516849841032-87cbac4d88f7?q=80&w=2070&auto=format&fit=crop'); }
+        #propulsion { background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop'); }
+        #solar { background-image: url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=2072&auto=format&fit=crop'); }
 
         /* --- CONTACT --- */
-        .contact-section {
-            padding: 150px 0;
+        .contact-block {
+            padding: 180px 0;
+            background-color: var(--gray-900);
             text-align: center;
-            background: var(--gray-100);
         }
-        .email-large {
-            font-size: clamp(1.5rem, 4vw, 3rem);
+        .mail-anchor {
+            font-family: 'Rajdhani';
+            font-size: clamp(1.5rem, 5vw, 3.5rem);
             color: var(--white);
             text-decoration: none;
-            font-family: 'Rajdhani';
             font-weight: 700;
             transition: 0.3s;
         }
-        .email-large:hover { color: var(--accent); }
+        .mail-anchor:hover { color: var(--accent); }
 
         footer {
-            padding: 50px;
+            padding: 60px;
             text-align: center;
             font-size: 0.7rem;
-            color: var(--text-muted);
-            letter-spacing: 3px;
-            border-top: 1px solid var(--gray-200);
+            color: #444;
+            letter-spacing: 4px;
+            background: var(--black);
         }
     </style>
 </head>
@@ -164,71 +160,69 @@
             <a class="navbar-brand text-white fw-bold" href="#">AETHER SPACE</a>
             <div class="collapse navbar-collapse justify-content-end">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#rocket">LAUNCH VEHICLE</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#engine">PROPULSION</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#sails">SOLAR SAILS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#launch">VEHICLES</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#propulsion">ENGINES</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#solar">LOGISTICS</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">CONTACT</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section id="rocket" class="fullscreen-bg">
+    <section id="launch" class="section-hero">
         <div class="overlay"></div>
-        <div class="container section-content" data-aos="fade-right">
-            <span class="pre-title">ACTIVE PROGRAM</span>
-            <h1 class="main-title">SELENE 1</h1>
-            <p class="text-secondary col-md-5">A high-cadence launch system designed for responsive orbital insertion and structural reusability.</p>
+        <div class="content-wrap" data-aos="fade-up">
+            <span class="label-tech">LAUNCH SYSTEMS // ACTIVE</span>
+            <h1 class="display-title">SELENE 1</h1>
+            <p class="text-secondary">Next-generation medium-lift launch vehicle designed for rapid-response orbital injection and low-Earth orbit constellation deployment.</p>
             
-            <div class="spec-table">
-                <div class="spec-row"><span class="spec-label">HEIGHT</span><span class="spec-value">18.5 m</span></div>
-                <div class="spec-row"><span class="spec-label">PAYLOAD TO LEO</span><span class="spec-value">450 kg</span></div>
-                <div class="spec-row"><span class="spec-label">STAGES</span><span class="spec-value">2</span></div>
+            <div class="spec-container">
+                <div class="spec-item"><span class="spec-label">HEIGHT</span><span class="spec-value">18.5 m / 60.7 ft</span></div>
+                <div class="spec-item"><span class="spec-label">DIAMETER</span><span class="spec-value">1.5 m / 4.9 ft</span></div>
+                <div class="spec-item"><span class="spec-label">LEO CAPACITY</span><span class="spec-value">450 kg / 992 lbs</span></div>
             </div>
             <a href="#contact" class="btn-spacex">VIEW MISSION LOG</a>
         </div>
     </section>
 
-    <section id="engine" class="fullscreen-bg">
+    <section id="propulsion" class="section-hero">
         <div class="overlay"></div>
-        <div class="container section-content" data-aos="fade-right">
-            <span class="pre-title">PROPULSION UNIT</span>
-            <h1 class="main-title">IGNIS 1</h1>
-            <p class="text-secondary col-md-5">Next-generation liquid oxygen and kerosene engine utilizing advanced additive manufacturing for extreme durability.</p>
+        <div class="content-wrap" data-aos="fade-up">
+            <span class="label-tech">PROPULSION // FLIGHT HARDWARE</span>
+            <h1 class="display-title">IGNIS 1</h1>
+            <p class="text-secondary">Liquid oxygen and kerosene-powered booster engine. Optimized for extreme thermal gradients and multi-start reliability.</p>
             
-            <div class="spec-table">
-                <div class="spec-row"><span class="spec-label">THRUST (VAC)</span><span class="spec-value">7.26 kN</span></div>
-                <div class="spec-row"><span class="spec-label">CHAMBER PRESSURE</span><span class="spec-value">12.5 bar</span></div>
-                <div class="spec-row"><span class="spec-label">ISP (SL)</span><span class="spec-value">285 s</span></div>
+            <div class="spec-container">
+                <div class="spec-item"><span class="spec-label">THRUST (VAC)</span><span class="spec-value">7.26 kN / 1,632 lbf</span></div>
+                <div class="spec-item"><span class="spec-label">PROPELLANT</span><span class="spec-value">LOX / RP-1</span></div>
+                <div class="spec-item"><span class="spec-label">CYCLE</span><span class="spec-value">Gas Generator</span></div>
             </div>
-            <a href="#contact" class="btn-spacex">TECHNICAL DATASHEET</a>
+            <a href="#contact" class="btn-spacex">TECHNICAL SPECS</a>
         </div>
     </section>
 
-    <section id="sails" class="fullscreen-bg">
+    <section id="solar" class="section-hero">
         <div class="overlay"></div>
-        <div class="container section-content" data-aos="fade-right">
-            <span class="pre-title">DEEP SPACE LOGISTICS</span>
-            <h1 class="main-title">AURORA 1</h1>
-            <p class="text-secondary col-md-5">Propellantless navigation utilizing photon radiation pressure for infinite-range orbital maneuvering.</p>
+        <div class="content-wrap" data-aos="fade-up">
+            <span class="label-tech">ORBITAL LOGISTICS // R&D</span>
+            <h1 class="display-title">AURORA 1</h1>
+            <p class="text-secondary">Propellantless deep space navigation. Converting solar radiation pressure into continuous thrust for high-efficiency deep space transit.</p>
             
-            <div class="spec-table">
-                <div class="spec-row"><span class="spec-label">SAIL AREA</span><span class="spec-value">16 m²</span></div>
-                <div class="spec-row"><span class="spec-label">MEMBRANE</span><span class="spec-value">25μm Aluminized Mylar</span></div>
-                <div class="spec-row"><span class="spec-label">SYSTEM MASS</span><span class="spec-value">0.56 kg</span></div>
+            <div class="spec-container">
+                <div class="spec-item"><span class="spec-label">SAIL AREA</span><span class="spec-value">16 m²</span></div>
+                <div class="spec-item"><span class="spec-label">MEMBRANE</span><span class="spec-value">Aluminized Mylar</span></div>
+                <div class="spec-item"><span class="spec-label">DEPLOYMENT</span><span class="spec-value">Mechanical Boom</span></div>
             </div>
-            <a href="#contact" class="btn-spacex">SYSTEM ARCHITECTURE</a>
+            <a href="#contact" class="btn-spacex">EXPLORE AURORA</a>
         </div>
     </section>
 
-    <section id="contact" class="contact-section">
-        <div class="container" data-aos="fade-up">
-            <span class="pre-title">BUSINESS INQUIRIES</span>
-            <h2 class="mb-5 display-4 fw-bold">CONNECT WITH US</h2>
-            <a href="mailto:contact@aetherspace.com" class="email-large">CONTACT@AETHERSPACE.COM</a>
-            <div class="mt-5">
-                <p class="text-secondary">Aether Space is currently accepting research partners and mission integrators.</p>
-            </div>
+    <section id="contact" class="contact-block">
+        <div class="container" data-aos="zoom-in">
+            <span class="label-tech" style="color: #666;">COOPERATION</span>
+            <h2 class="mb-5 display-5 fw-bold">READY FOR DEPLOYMENT?</h2>
+            <a href="mailto:aetherspace@gmail.com" class="mail-anchor">AETHERSPACE@GMAIL.COM</a>
+            <p class="mt-5 text-secondary">Inquiries for mission integration and payload slots now open.</p>
         </div>
     </section>
 
@@ -239,7 +233,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000, once: false });
+        AOS.init({ duration: 1200, once: false });
     </script>
 </body>
 </html>
